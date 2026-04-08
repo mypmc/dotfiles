@@ -1,0 +1,27 @@
+[user]
+  name  = Kohei Watanabe
+  email = mypmc@symplectix.dev
+
+[init]
+  defaultBranch = main
+
+[alias]
+  s  = status
+  ss = status --short
+
+[commit]
+  template = ~/config/git/message
+  verbose = true
+
+[fetch]
+  prune = true
+
+[merge]
+  ff = false
+
+[pull]
+  ff = only
+  rebase = true
+
+[rebase]
+  autostash = true

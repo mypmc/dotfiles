@@ -1,0 +1,66 @@
+# https://docs.helix-editor.com/master/editor.html
+
+theme = "everforest_dark"
+
+[editor]
+bufferline = "never"
+# line-number = "relative"
+
+true-color = true
+undercurl = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = " "
+tab = "→"
+tabpad = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+newline = "⏎"
+
+[editor.file-picker]
+hidden = true
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[keys.normal]
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+
+C-y = [
+  ":sh rm -f /tmp/unique-ca1ea106",
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-ca1ea106',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ":open %sh{cat /tmp/unique-ca1ea106}",
+  ":redraw",
+  ":set mouse false",
+  ":set mouse true",
+]
+
+"ret" = ["move_line_down", "goto_first_nonwhitespace"]
+G = "goto_last_line"
+
+[keys.normal.space]
+"." = "file_picker_in_current_buffer_directory"

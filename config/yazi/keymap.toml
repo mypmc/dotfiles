@@ -1,0 +1,10 @@
+[[mgr.prepend_keymap]]
+on   = "!"
+desc = "Open fish here"
+for  = "unix"
+run  = 'shell "fish" --block'
+
+[[mgr.prepend_keymap]]
+on = [ "g", "r" ]
+desc = "Go to the repository root"
+run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'

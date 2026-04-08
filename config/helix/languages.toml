@@ -1,0 +1,32 @@
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer"]
+
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+
+[[language]]
+name = "go"
+
+[[language]]
+name = "toml"
+auto-format = false
+language-servers = ["tombi"]
+
+# [language-server.rust-analyzer]
+# command = "rustup"
+# args = ["run", "nightly", "rust-analyzer"]
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
+# [language-server.pylsp.config.pylsp]
+# plugins.pylsp_mypy.enabled = true
+# plugins.pylsp_mypy.live_mode = true
+
+[language-server.gopls.config]
+command = "gopls"
+gofumpt = true
+staticcheck = true

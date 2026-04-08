@@ -1,0 +1,41 @@
+[general]
+import = [
+  "~/config/alacritty/themes/themes/everforest_dark_medium.toml",
+]
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "JetBrainsMonoNerdFontMono"
+style = "Medium"
+
+[font.bold]
+family = "JetBrainsMonoNerdFontMono"
+style = "Bold"
+
+[terminal.shell]
+program = "/usr/bin/zellij"
+args = [
+  "--config",
+  "/home/kw/config/zellij/config.kdl",
+]
+
+[window]
+decorations = "none"
+option_as_alt = "OnlyLeft"
+
+[window.padding]
+x = 0
+y = 0
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\n"
