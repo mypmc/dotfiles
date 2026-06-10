@@ -5,7 +5,9 @@ language-servers = ["rust-analyzer"]
 
 [[language]]
 name = "python"
-language-servers = ["pylsp"]
+language-servers = ["basedpyright", "ruff"]
+formatter = { command = "ruff", args = ["format", "-"] }
+auto-format = true
 
 [[language]]
 name = "go"
@@ -18,6 +20,14 @@ language-servers = ["tombi"]
 # [language-server.rust-analyzer]
 # command = "rustup"
 # args = ["run", "nightly", "rust-analyzer"]
+
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 [language-server.rust-analyzer.config]
 check.command = "clippy"
